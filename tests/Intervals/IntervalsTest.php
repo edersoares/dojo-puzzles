@@ -2,7 +2,7 @@
 
 namespace DojoPuzzles\Tests\Intervals;
 
-use DojoPuzzles\Intervals\GrouperOfNumbers;
+use DojoPuzzles\Intervals\GrouperOfNumberInSets;
 use PHPUnit\Framework\TestCase;
 
 class IntervalsTest extends TestCase
@@ -20,7 +20,7 @@ class IntervalsTest extends TestCase
      */
     public function testChallenge()
     {
-        $grouper = new GrouperOfNumbers();
+        $grouper = new GrouperOfNumberInSets();
 
         $result = $grouper->group('100, 101, 102, 103, 104, 105, 110, 111, 113, 114, 115, 150');
 
