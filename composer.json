@@ -1,0 +1,15 @@
+{
+    "autoload": {
+        "psr-4": {
+            "DojoPuzzles\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DojoPuzzles\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    }
+}
