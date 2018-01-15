@@ -8,12 +8,8 @@ class GrouperOfNumberInSets
     {
         $numbers = explode(',', $numbers);
         $numbers = array_map('trim', $numbers);
-
         $index = $current = array_shift($numbers);
-
-        $groups = [
-            $current => null
-        ];
+        $groups = [$current => null];
 
         foreach ($numbers as $number) {
 
@@ -27,7 +23,6 @@ class GrouperOfNumberInSets
         }
 
         $groups[$index] = $current;
-
         $numbers = [];
 
         foreach ($groups as $first => $last) {
