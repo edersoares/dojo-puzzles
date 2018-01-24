@@ -4,6 +4,7 @@ namespace DojoPuzzles\Tests\Jokenpo;
 
 use DojoPuzzles\Jokenpo\Mediator;
 use DojoPuzzles\Jokenpo\Nobody;
+use DojoPuzzles\Jokenpo\Paper;
 use DojoPuzzles\Jokenpo\Player;
 use DojoPuzzles\Jokenpo\Rock;
 use DojoPuzzles\Jokenpo\Scissors;
@@ -39,5 +40,20 @@ class MediatorTest extends TestCase
         $winner = $mediator->whoWins($playerOne, $playerTwo);
 
         $this->assertEquals($playerOne, $winner);
+    }
+
+    public function testScissorsWinsPaper()
+    {
+        $playerOne = new Player('Player One');
+        $playerTwo = new Player('Player Two');
+
+        $playerOne->chooses(new Paper());
+        $playerTwo->chooses(new Scissors());
+
+        $mediator = new Mediator();
+
+        $winner = $mediator->whoWins($playerOne, $playerTwo);
+
+        $this->assertEquals($playerTwo, $winner);
     }
 }
