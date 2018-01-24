@@ -6,16 +6,16 @@ class Scissors implements Hand
 {
     public function winsOf(Hand $hand)
     {
-        // TODO: Implement winsOf() method.
+        return $hand instanceof Paper;
     }
 
     public function losesOf(Hand $hand)
     {
-        // TODO: Implement losesOf() method.
+        return $hand instanceof Rock;
     }
 
     public function drawsWith(Hand $hand)
     {
-        return $hand instanceof Rock;
+        return $hand instanceof Scissors;
     }
 }

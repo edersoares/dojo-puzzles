@@ -6,6 +6,7 @@ use DojoPuzzles\Jokenpo\Mediator;
 use DojoPuzzles\Jokenpo\Nobody;
 use DojoPuzzles\Jokenpo\Player;
 use DojoPuzzles\Jokenpo\Rock;
+use DojoPuzzles\Jokenpo\Scissors;
 use PHPUnit\Framework\TestCase;
 
 class MediatorTest extends TestCase
@@ -23,5 +24,20 @@ class MediatorTest extends TestCase
         $winner = $mediator->whoWins($playerOne, $playerTwo);
 
         $this->assertInstanceOf(Nobody::class, $winner);
+    }
+
+    public function testRockWinsScissors()
+    {
+        $playerOne = new Player('Player One');
+        $playerTwo = new Player('Player Two');
+
+        $playerOne->chooses(new Rock());
+        $playerTwo->chooses(new Scissors());
+
+        $mediator = new Mediator();
+
+        $winner = $mediator->whoWins($playerOne, $playerTwo);
+
+        $this->assertEquals($playerOne, $winner);
     }
 }
